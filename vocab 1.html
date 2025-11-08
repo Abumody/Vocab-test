@@ -19,7 +19,7 @@
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -27,7 +27,7 @@
         header {
             text-align: center;
             padding: 20px 0;
-            background: linear-gradient(135deg, #f39c12, #e67e22);
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
             color: white;
             border-radius: 10px;
             margin-bottom: 30px;
@@ -50,7 +50,7 @@
             padding: 20px;
             margin-bottom: 25px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-            border-left: 5px solid #f39c12;
+            border-left: 5px solid #9b59b6;
         }
         
         .instructions p {
@@ -72,65 +72,42 @@
             color: #2c3e50;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #f39c12;
+            border-bottom: 2px solid #9b59b6;
         }
         
-        .question {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .question:last-child {
-            border-bottom: none;
-        }
-        
-        .question-number {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        
-        .word-type {
-            font-style: italic;
-            color: #7f8c8d;
-            margin-bottom: 10px;
-        }
-        
-        .definition {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-        
-        .example {
+        .paragraph {
+            margin-bottom: 30px;
+            padding: 20px;
             background-color: #f8f9fa;
-            padding: 15px;
             border-radius: 8px;
-            margin-bottom: 15px;
             border-left: 3px solid #3498db;
         }
         
-        .example-text {
+        .paragraph-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .paragraph-text {
             font-size: 1.1rem;
-            line-height: 1.5;
+            line-height: 1.7;
         }
         
         .blank-input {
-            display: inline-flex;
-            align-items: center;
+            display: inline-block;
             margin: 0 5px;
         }
         
         .blank-input input {
-            width: 30px;
+            width: 120px;
             height: 35px;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
             border: 2px solid #bdc3c7;
             border-radius: 5px;
-            margin: 0 2px;
+            padding: 0 10px;
             text-transform: lowercase;
         }
         
@@ -152,10 +129,10 @@
             color: #721c24;
         }
         
-        .hint {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-top: 10px;
+        .word-number {
+            font-weight: bold;
+            color: #9b59b6;
+            margin-right: 5px;
         }
         
         .actions {
@@ -201,17 +178,6 @@
             background-color: #2980b9;
         }
         
-        .btn-hint {
-            background-color: #9b59b6;
-            color: white;
-            padding: 8px 15px;
-            font-size: 0.9rem;
-        }
-        
-        .btn-hint:hover {
-            background-color: #8e44ad;
-        }
-        
         .results {
             background: white;
             border-radius: 10px;
@@ -234,13 +200,46 @@
         }
         
         .score-value {
-            color: #f39c12;
+            color: #9b59b6;
             font-size: 2rem;
         }
         
         .feedback {
             font-size: 1.1rem;
             margin-bottom: 20px;
+        }
+        
+        .word-list {
+            margin-top: 20px;
+            text-align: left;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .word-list-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .word-list ul {
+            columns: 2;
+            list-style-type: none;
+        }
+        
+        .word-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .word-list li:before {
+            content: "•";
+            color: #9b59b6;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
         
         @media (max-width: 768px) {
@@ -253,9 +252,9 @@
             }
             
             .blank-input input {
-                width: 25px;
+                width: 100px;
                 height: 30px;
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             
             .actions {
@@ -266,374 +265,69 @@
             .btn {
                 width: 100%;
             }
+            
+            .word-list ul {
+                columns: 1;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>VOCABULARY EXERCISES</h1>
+            <h1>VOCABULARY PARAGRAPH EXERCISES</h1>
             <p class="subtitle">G. 11 Sem I 2024-2025</p>
         </header>
         
         <div class="instructions">
-            <p><strong>Instructions:</strong> Fill in the missing letters to complete each word based on the definition and example sentence.</p>
-            <p>Type one letter in each box. Use lowercase letters only.</p>
+            <p><strong>Instructions:</strong> Read the paragraphs below and fill in the blanks with the correct vocabulary words.</p>
+            <p>Type the complete word in each box. Use lowercase letters only.</p>
+        </div>
+        
+        <div class="word-list">
+            <div class="word-list-title">Vocabulary Words:</div>
+            <ul>
+                <li>conflict</li>
+                <li>influence</li>
+                <li>media</li>
+                <li>acne</li>
+                <li>transition</li>
+                <li>critical</li>
+                <li>suspicious</li>
+                <li>cheerful</li>
+                <li>sensitive</li>
+                <li>impatient</li>
+                <li>worry</li>
+                <li>hang out</li>
+                <li>compare</li>
+                <li>treat</li>
+                <li>experience</li>
+            </ul>
         </div>
         
         <div class="vocabulary-section">
-            <div class="section-title">VOCABULARY 03 (Items 1 - 8)</div>
+            <div class="section-title">PARAGRAPH 01</div>
             
-            <div class="question" data-correct="onflict">
-                <div class="question-number">1.</div>
-                <div class="word-type">(noun)</div>
-                <div class="definition">a serious disagreement or argument.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. There was a 
-                        <span class="blank-input">
-                            <strong>c</strong>
-                            <input type="text" maxlength="1" data-index="0">
-                            <input type="text" maxlength="1" data-index="1">
-                            <input type="text" maxlength="1" data-index="2">
-                            <input type="text" maxlength="1" data-index="3">
-                            <input type="text" maxlength="1" data-index="4">
-                            <input type="text" maxlength="1" data-index="5">
-							<input type="text" maxlength="1" data-index="6">
-                        </span>
-                        between the two countries over the border.
-                    </div>
+            <div class="paragraph">
+                <div class="paragraph-title">Teenage Life and Challenges</div>
+                <div class="paragraph-text">
+                    The <span class="word-number">1</span><span class="blank-input"><input type="text" data-correct="transition"></span> from middle school to high school can be challenging for many teenagers. During this period, they often face internal <span class="word-number">2</span><span class="blank-input"><input type="text" data-correct="conflict"></span> as they try to figure out their identity. The <span class="word-number">3</span><span class="blank-input"><input type="text" data-correct="media"></span> has a significant <span class="word-number">4</span><span class="blank-input"><input type="text" data-correct="influence"></span> on how teens perceive themselves and others. Many become <span class="word-number">5</span><span class="blank-input"><input type="text" data-correct="critical"></span> of their appearance, especially if they struggle with skin issues like <span class="word-number">6</span><span class="blank-input"><input type="text" data-correct="acne"></span>. It's important for parents to <span class="word-number">7</span><span class="blank-input"><input type="text" data-correct="treat"></span> their children with understanding during these difficult years.
                 </div>
-                <button class="btn btn-hint" onclick="showHint(1)">Show Hint</button>
-                <div class="hint" id="hint1" style="display: none;">Hint: The word starts with "con" and has 8 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="nfluence">
-                <div class="question-number">2.</div>
-                <div class="word-type">(noun)</div>
-                <div class="definition">the capacity to have an effect on someone or something.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. Her parents had a strong 
-                        <span class="blank-input">
-                            <strong>i</strong>
-                            <input type="text" maxlength="1" data-index="0">
-                            <input type="text" maxlength="1" data-index="1">
-                            <input type="text" maxlength="1" data-index="2">
-                            <input type="text" maxlength="1" data-index="3">
-							<input type="text" maxlength="1" data-index="4">
-							<input type="text" maxlength="1" data-index="5">
-							<input type="text" maxlength="1" data-index="6">
-							<input type="text" maxlength="1" data-index="7">
-							<input type="text" maxlength="1" data-index="8">
-                        </span>
-                        on her decision to become a doctor.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(2)">Show Hint</button>
-                <div class="hint" id="hint2" style="display: none;">Hint: The word starts with "infl" and has 9 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="edia">
-                <div class="question-number">3.</div>
-                <div class="word-type">(noun)</div>
-                <div class="definition">the main means of mass communication.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. Social 
-                        <span class="blank-input">
-                            <strong>m</strong>
-                            <input type="text" maxlength="1" data-index="0">
-                            <input type="text" maxlength="1" data-index="1">
-							<input type="text" maxlength="1" data-index="2">
-							<input type="text" maxlength="1" data-index="3">
-                        </span>
-                        has changed how we get news and information.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(3)">Show Hint</button>
-                <div class="hint" id="hint3" style="display: none;">Hint: The word starts with "med" and has 5 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="cne">
-                <div class="question-number">4.</div>
-                <div class="word-type">(noun)</div>
-                <div class="definition">a skin condition causing pimples.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. Many teenagers struggle with 
-                        <span class="blank-input">
-                            <strong>a</strong>
-                            <input type="text" maxlength="1" data-index="0">
-							<input type="text" maxlength="1" data-index="1">
-							<input type="text" maxlength="1" data-index="2">
-                        </span>
-                        during puberty.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(4)">Show Hint</button>
-                <div class="hint" id="hint4" style="display: none;">Hint: The word starts with "acn" and has 4 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="ransition">
-                <div class="question-number">5.</div>
-                <div class="word-type">(noun)</div>
-                <div class="definition">the process of changing from one state to another.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. The 
-                        <span class="blank-input">
-                            <strong>t</strong>
-                            <input type="text" maxlength="1" data-index="0">
-                            <input type="text" maxlength="1" data-index="1">
-                            <input type="text" maxlength="1" data-index="2">
-                            <input type="text" maxlength="1" data-index="3">
-                            <input type="text" maxlength="1" data-index="4">
-							<input type="text" maxlength="1" data-index="5">
-							<input type="text" maxlength="1" data-index="6">
-							<input type="text" maxlength="1" data-index="7">
-							<input type="text" maxlength="1" data-index="8">
-                        </span>
-                        from high school to college can be challenging.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(5)">Show Hint</button>
-                <div class="hint" id="hint5" style="display: none;">Hint: The word starts with "trans" and has 10 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="ritical">
-                <div class="question-number">6.</div>
-                <div class="word-type">(adjective)</div>
-                <div class="definition">expressing adverse or disapproving comments.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. The movie received 
-                        <span class="blank-input">
-                            <strong>c</strong>
-                            <input type="text" maxlength="1" data-index="0">
-                            <input type="text" maxlength="1" data-index="1">
-                            <input type="text" maxlength="1" data-index="2">
-                            <input type="text" maxlength="1" data-index="3">
-							<input type="text" maxlength="1" data-index="4">
-							<input type="text" maxlength="1" data-index="5">
-							<input type="text" maxlength="1" data-index="6">
-                        </span>
-                        reviews from most film critics.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(6)">Show Hint</button>
-                <div class="hint" id="hint6" style="display: none;">Hint: The word starts with "crit" and has 8 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="uspicious">
-                <div class="question-number">7.</div>
-                <div class="word-type">(adjective)</div>
-                <div class="definition">having or showing a cautious distrust of someone or something.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. The police were 
-                        <span class="blank-input">
-                            <strong>s</strong>
-                            <input type="text" maxlength="1" data-index="0">
-                            <input type="text" maxlength="1" data-index="1">
-                            <input type="text" maxlength="1" data-index="2">
-                            <input type="text" maxlength="1" data-index="3">
-							<input type="text" maxlength="1" data-index="4">
-							<input type="text" maxlength="1" data-index="5">
-							<input type="text" maxlength="1" data-index="6">
-							<input type="text" maxlength="1" data-index="7">
-							<input type="text" maxlength="1" data-index="8">
-                        </span>
-                        of his alibi for the night of the robbery.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(7)">Show Hint</button>
-                <div class="hint" id="hint7" style="display: none;">Hint: The word starts with "suspic" and has 10 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="heerful">
-                <div class="question-number">8.</div>
-                <div class="word-type">(adjective)</div>
-                <div class="definition">noticeably happy and optimistic.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. She has a 
-                        <span class="blank-input">
-                            <strong>c</strong>
-                            <input type="text" maxlength="1" data-index="0">
-                            <input type="text" maxlength="1" data-index="1">
-                            <input type="text" maxlength="1" data-index="2">
-							<input type="text" maxlength="1" data-index="3">
-							<input type="text" maxlength="1" data-index="4">
-							<input type="text" maxlength="1" data-index="5">
-							<input type="text" maxlength="1" data-index="6">
-                        </span>
-                        disposition that brightens everyone's day.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(8)">Show Hint</button>
-                <div class="hint" id="hint8" style="display: none;">Hint: The word starts with "cheer" and has 8 letters total</div>
             </div>
         </div>
         
         <div class="vocabulary-section">
-            <div class="section-title">VOCABULARY 04 (Items 1 - 7)</div>
+            <div class="section-title">PARAGRAPH 02</div>
             
-            <div class="question" data-correct="ensitive">
-                <div class="question-number">1.</div>
-                <div class="word-type">(adjective)</div>
-                <div class="definition">quick to detect or respond to slight changes.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. She has very 
-                        <span class="blank-input">
-                            <strong>s</strong>
-                            <input type="text" maxlength="1" data-index="0">
-                            <input type="text" maxlength="1" data-index="1">
-                            <input type="text" maxlength="1" data-index="2">
-							<input type="text" maxlength="1" data-index="3">
-							<input type="text" maxlength="1" data-index="4">
-							<input type="text" maxlength="1" data-index="5">
-							<input type="text" maxlength="1" data-index="6">
-							<input type="text" maxlength="1" data-index="7">
-                        </span>
-                        skin that reacts badly to harsh soaps.
-                    </div>
+            <div class="paragraph">
+                <div class="paragraph-title">Social Interactions and Emotions</div>
+                <div class="paragraph-text">
+                    When friends plan to <span class="word-number">8</span><span class="blank-input"><input type="text" data-correct="hang out"></span> together, it's natural to <span class="word-number">9</span><span class="blank-input"><input type="text" data-correct="compare"></span> your social life to others. However, this can sometimes make people feel <span class="word-number">10</span><span class="blank-input"><input type="text" data-correct="impatient"></span> if they're not included. Some individuals are particularly <span class="word-number">11</span><span class="blank-input"><input type="text" data-correct="sensitive"></span> about social rejection and may become <span class="word-number">12</span><span class="blank-input"><input type="text" data-correct="suspicious"></span> of others' intentions. Despite these challenges, maintaining a <span class="word-number">13</span><span class="blank-input"><input type="text" data-correct="cheerful"></span> attitude can help. Instead of letting <span class="word-number">14</span><span class="blank-input"><input type="text" data-correct="worry"></span> consume you, try to gain <span class="word-number">15</span><span class="blank-input"><input type="text" data-correct="experience"></span> from different social situations to build confidence.
                 </div>
-                <button class="btn btn-hint" onclick="showHint(9)">Show Hint</button>
-                <div class="hint" id="hint9" style="display: none;">Hint: The word starts with "sens" and has 8 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="patient">
-                <div class="question-number">2.</div>
-                <div class="word-type">(adjective)</div>
-                <div class="definition">having or showing a tendency to be quickly irritated.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. He became 
-                        <span class="blank-input">
-                            <strong>im</strong>
-                            <input type="text" maxlength="1" data-index="0">
-                            <input type="text" maxlength="1" data-index="1">
-                            <input type="text" maxlength="1" data-index="2">
-                            <input type="text" maxlength="1" data-index="3">
-                            <input type="text" maxlength="1" data-index="4">
-                            <input type="text" maxlength="1" data-index="5">
-                            <input type="text" maxlength="1" data-index="6">
-                        </span>
-                        while waiting in the long queue.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(10)">Show Hint</button>
-                <div class="hint" id="hint10" style="display: none;">Hint: The word starts with "imp" and has 9 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="orry">
-                <div class="question-number">3.</div>
-                <div class="word-type">(verb)</div>
-                <div class="definition">to feel anxious or troubled about actual or potential problems.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. Don't 
-                        <span class="blank-input">
-                            <strong>w</strong>
-                            <input type="text" maxlength="1" data-index="0">
-							<input type="text" maxlength="1" data-index="1">
-							<input type="text" maxlength="1" data-index="2">
-							<input type="text" maxlength="1" data-index="3">
-                        </span>
-                        about the exam; I'm sure you'll do well.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(11)">Show Hint</button>
-                <div class="hint" id="hint11" style="display: none;">Hint: The word starts with "worr" and has 5 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="out">
-                <div class="question-number">4.</div>
-                <div class="word-type">(phrasal verb)</div>
-                <div class="definition">to spend time relaxing or socializing informally.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. We like to 
-                        <span class="blank-input">
-                            <strong>hang</strong>
-                            <input type="text" maxlength="1" data-index="0">
-                            <input type="text" maxlength="1" data-index="1">
-                            <input type="text" maxlength="1" data-index="2">
-                        </span>
-                        at the mall on weekends.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(12)">Show Hint</button>
-                <div class="hint" id="hint12" style="display: none;">Hint: The phrase starts with "hang" and has 7 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="are">
-                <div class="question-number">5.</div>
-                <div class="word-type">(verb)</div>
-                <div class="definition">to estimate the similarity or difference between things.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. Let's 
-                        <span class="blank-input">
-                            <strong>comp</strong>
-                            <input type="text" maxlength="1" data-index="0">
-                            <input type="text" maxlength="1" data-index="1">
-                            <input type="text" maxlength="1" data-index="2">
-                        </span>
-                        the prices before we decide where to shop.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(13)">Show Hint</button>
-                <div class="hint" id="hint13" style="display: none;">Hint: The word starts with "comp" and has 7 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="reat">
-                <div class="question-number">6.</div>
-                <div class="word-type">(verb)</div>
-                <div class="definition">to behave toward or deal with in a certain way.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. You should always 
-                        <span class="blank-input">
-                            <strong>t</strong>
-                            <input type="text" maxlength="1" data-index="0">
-							<input type="text" maxlength="1" data-index="1">
-							<input type="text" maxlength="1" data-index="2">
-							<input type="text" maxlength="1" data-index="3">
-                        </span>
-                        others with respect and kindness.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(14)">Show Hint</button>
-                <div class="hint" id="hint14" style="display: none;">Hint: The word starts with "trea" and has 5 letters total</div>
-            </div>
-            
-            <div class="question" data-correct="ence">
-                <div class="question-number">7.</div>
-                <div class="word-type">(noun)</div>
-                <div class="definition">practical contact with and observation of facts or events.</div>
-                <div class="example">
-                    <div class="example-text">
-                        e.g. She has a lot of 
-                        <span class="blank-input">
-                            <strong>experi</strong>
-                            <input type="text" maxlength="1" data-index="0">
-                            <input type="text" maxlength="1" data-index="1">
-                            <input type="text" maxlength="1" data-index="2">
-                            <input type="text" maxlength="1" data-index="3">
-                        </span>
-                        working with children.
-                    </div>
-                </div>
-                <button class="btn btn-hint" onclick="showHint(15)">Show Hint</button>
-                <div class="hint" id="hint15" style="display: none;">Hint: The word starts with "experi" and has 11 letters total</div>
             </div>
         </div>
         
         <div class="actions">
-            <button class="btn btn-back" onclick="goBack()">Back to Main Page</button>
             <button class="btn btn-reset" onclick="resetAnswers()">Reset Answers</button>
             <button class="btn btn-check" onclick="checkAnswers()">Check Answers</button>
         </div>
@@ -646,79 +340,23 @@
     </div>
 
     <script>
-        // Show hint function
-        function showHint(questionNumber) {
-            const hint = document.getElementById(`hint${questionNumber}`);
-            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
-        }
-        
-        // Auto-focus next input
-        document.querySelectorAll('.blank-input input').forEach(input => {
-            input.addEventListener('input', function() {
-                if (this.value.length === this.maxLength) {
-                    const inputs = this.parentElement.querySelectorAll('input');
-                    const currentIndex = Array.from(inputs).indexOf(this);
-                    if (currentIndex < inputs.length - 1) {
-                        inputs[currentIndex + 1].focus();
-                    }
-                }
-            });
-            
-            // Allow moving with arrow keys
-            input.addEventListener('keydown', function(e) {
-                const inputs = this.parentElement.querySelectorAll('input');
-                const currentIndex = Array.from(inputs).indexOf(this);
-                
-                if (e.key === 'ArrowLeft' && currentIndex > 0) {
-                    inputs[currentIndex - 1].focus();
-                } else if (e.key === 'ArrowRight' && currentIndex < inputs.length - 1) {
-                    inputs[currentIndex + 1].focus();
-                }
-            });
-        });
-        
         // Check answers function
         function checkAnswers() {
             let correctCount = 0;
-            const totalQuestions = document.querySelectorAll('.question').length;
+            const totalQuestions = document.querySelectorAll('.blank-input input').length;
             
-            document.querySelectorAll('.question').forEach(question => {
-                const correctAnswer = question.getAttribute('data-correct');
-                const inputs = question.querySelectorAll('.blank-input input');
-                
-                // Build user's answer
-                let userAnswer = '';
-                inputs.forEach(input => {
-                    userAnswer += input.value.toLowerCase();
-                });
+            document.querySelectorAll('.blank-input input').forEach(input => {
+                const correctAnswer = input.getAttribute('data-correct');
+                const userAnswer = input.value.toLowerCase().trim();
                 
                 // Reset previous correct/incorrect classes
-                inputs.forEach(input => {
-                    input.classList.remove('correct', 'incorrect');
-                });
+                input.classList.remove('correct', 'incorrect');
                 
                 if (userAnswer === correctAnswer) {
-                    // All correct
-                    inputs.forEach(input => {
-                        input.classList.add('correct');
-                    });
+                    input.classList.add('correct');
                     correctCount++;
                 } else {
-                    // Some incorrect - highlight individual letters
-                    for (let i = 0; i < Math.min(userAnswer.length, correctAnswer.length); i++) {
-                        if (userAnswer[i] === correctAnswer[i]) {
-                            inputs[i].classList.add('correct');
-                        } else {
-                            inputs[i].classList.add('incorrect');
-                        }
-                    }
-                    
-                    // Mark remaining inputs as incorrect if user didn't fill them
-                    for (let i = userAnswer.length; i < correctAnswer.length; i++) {
-                        if (inputs[i]) {
-                            inputs[i].classList.add('incorrect');
-                        }
-                    }
+                    input.classList.add('incorrect');
                 }
             });
             
@@ -752,19 +390,16 @@
                 input.classList.remove('correct', 'incorrect');
             });
             
-            // Hide all hints
-            document.querySelectorAll('.hint').forEach(hint => {
-                hint.style.display = 'none';
-            });
-            
             // Hide results
             document.getElementById('results').classList.remove('show');
         }
         
-        // Go back to main page function
-        function goBack() {
-           window.location.href = "../Vocabulary Activities - Grade 11.html";
-        }
+        // Allow Enter key to check answers
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                checkAnswers();
+            }
+        });
     </script>
 </body>
 </html>
